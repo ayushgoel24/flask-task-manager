@@ -1,0 +1,12 @@
+<!-- app/auth/templates/auth/login.html -->
+{% extends "base.html" %}
+{% block title %}Sign In{% endblock %}
+{% block content %}
+<h1>Sign In</h1>
+<form method="post">
+    {{ form.username.label }} {{ form.username(size=32) }}<br>
+    {{ form.password.label }} {{ form.password(size=32) }}<br>
+    {{ form.remember_me() }} {{ form.remember_me.label }}<br>
+    {{ form.submit() }}
+</form>
+{% endblock %}

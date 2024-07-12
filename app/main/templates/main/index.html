@@ -1,0 +1,12 @@
+<!-- app/main/templates/main/index.html -->
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Your Tasks</h1>
+<ul>
+    {% for task in tasks %}
+    <li>{{ task.title }} - {{ task.description }} - {{ 'Completed' if task.completed else 'Not Completed' }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('main.add_task') }}">Add Task</a>
+{% endblock %}
